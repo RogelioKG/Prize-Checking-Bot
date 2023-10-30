@@ -1,0 +1,153 @@
+{
+  "type": "bubble",
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "Invoice",
+        "weight": "bold",
+        "color": "#1DB446",
+        "size": "3xl"
+      },
+      {
+        "type": "text",
+        "text": "NULL (year and month)",
+        "weight": "bold",
+        "size": "xxl",
+        "margin": "md"
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "text",
+            "text": "特別獎",
+            "size": "lg",
+            "color": "#D21F3C",
+            "weight": "bold",
+            "margin": "none",
+            "align": "start",
+            "flex": 0
+          },
+          {
+            "type": "text",
+            "text": "NULL (uniform-invoice numbers)",
+            "size": "lg",
+            "color": "#D21F3C",
+            "align": "end",
+            "weight": "bold"
+          }
+        ],
+        "margin": "md"
+      },
+      {
+        "type": "separator",
+        "margin": "md"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "margin": "xxl",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "特獎",
+                "size": "lg",
+                "color": "#555555",
+                "flex": 0,
+                "weight": "bold"
+              },
+              {
+                "type": "text",
+                "text": "NULL (uniform-invoice numbers)",
+                "size": "lg",
+                "color": "#111111",
+                "align": "end",
+                "weight": "bold"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "頭獎",
+                "size": "md",
+                "color": "#555555",
+                "flex": 0,
+                "weight": "bold"
+              },
+              {
+                "type": "text",
+                "text": "NULL (uniform-invoice numbers)",
+                "size": "md",
+                "color": "#111111",
+                "align": "end",
+                "weight": "bold"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "頭獎",
+                "size": "md",
+                "color": "#555555",
+                "flex": 0,
+                "weight": "bold"
+              },
+              {
+                "type": "text",
+                "text": "NULL (uniform-invoice numbers)",
+                "size": "md",
+                "color": "#111111",
+                "align": "end",
+                "weight": "bold"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "頭獎",
+                "size": "md",
+                "color": "#555555",
+                "flex": 0,
+                "weight": "bold"
+              },
+              {
+                "type": "text",
+                "text": "NULL (uniform-invoice numbers)",
+                "size": "md",
+                "color": "#111111",
+                "align": "end",
+                "weight": "bold"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "styles": {
+    "footer": {
+      "separator": true
+    }
+  }
+}
