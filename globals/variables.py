@@ -1,6 +1,7 @@
 # standard library
 import os
 import sys
+from pathlib import Path
 
 # third party library
 from linebot import (
@@ -8,16 +9,16 @@ from linebot import (
 )
 
 # User Channel Access Token
-line_bot_api = LineBotApi('...')
+line_bot_api = LineBotApi("...")
 
 # User Channel Secret
-handler = WebhookHandler('...')
+handler = WebhookHandler("...")
 
 # 統一發票開獎 RSS XML
 URL = "https://invoice.etax.nat.gov.tw/invoice.xml"
 
 # 父目錄
 try:
-    PATH = os.environ['LAMBDA_TASK_ROOT'] + "/"
+    CWD = Path(os.environ['LAMBDA_TASK_ROOT'])
 except KeyError:
-    PATH = sys.path[0] + "\\"
+    CWD = Path(sys.path[0])
