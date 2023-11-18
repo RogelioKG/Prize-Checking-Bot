@@ -8,4 +8,4 @@
 
 **該機器人已在 AWS Lambda 部屬，不介意的話加一下好友吧！**
 
-<img src="https://raw.githubusercontent.com/RogelioKG/Prize-Checking-Bot/main/qrcode.png" alt="QRcode" width="355" height="370"/>
+<img src="https://github.com/RogelioKG/Prize-Checking-Bot/blob/c3dbdbd154e4f915c072b8a022cd1e1bb5123140/images/qrcode.png" alt="QRcode" width="355" height="370"/>
