@@ -55,7 +55,7 @@ class PrizeInfo():
 
         Returns
         -------
-        - (str): 獎項資訊格式化字串
+        - (str) : 獎項資訊格式化字串
         """
         return f"""{self.title}\n特別獎：{self.special}\n特獎：{self.grand}\n頭獎：{self.first[0]}、{self.first[1]}、{self.first[2]}"""
 
