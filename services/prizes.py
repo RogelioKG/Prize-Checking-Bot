@@ -15,10 +15,10 @@ class PrizeInfo():
         """
         Attributes
         ----------
-        + `title` (str): 期別
-        + `special` (str): 特別獎
-        + `grand` (str): 特獎
-        + `first` (list[str]): 頭獎
+        + `title` (str) : 期別
+        + `special` (str) : 特別獎
+        + `grand` (str) : 特獎
+        + `first` (list[str]) : 頭獎
         """
         self.title = title
         self.special = special
@@ -31,11 +31,11 @@ class PrizeInfo():
 
         Parameters
         ----------
-        + `n` (int): 前 n 期
+        + `n` (int) : 前 n 期
 
         Returns
         -------
-        + (PrizeInfo): 獎項資訊
+        + (PrizeInfo) : 獎項資訊
         """
         
         response = requests.get(URL)
@@ -64,11 +64,11 @@ class PrizeInfo():
 
         Parameters
         ----------
-        - `last_three_digits` (str): 後三碼 
+        - `last_three_digits` (str) : 後三碼 
 
         Returns
         -------
-        + (tuple[bool, str]): 
+        + (tuple[bool, str]) : 
             - 是否中獎 (bool)
             - 回傳訊息 (str)
         """

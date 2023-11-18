@@ -13,11 +13,11 @@ def invo(prizeinfo: PrizeInfo) -> dict[str, Any]:
 
     Parameters
     ----------
-    + `prizeinfo` (PrizeInfo): 獎項資訊
+    + `prizeinfo` (PrizeInfo) : 獎項資訊
 
     Returns
     -------
-    + (dict[str, Any]): JSON 格式 bubble
+    + (dict[str, Any]) : JSON 格式 bubble
     """
 
     # 讀入 bubble 模板
@@ -39,11 +39,11 @@ def multi_invo(prizeinfos: list[PrizeInfo]) -> dict[str, Any]:
 
     Parameters
     ----------
-    + `prizeinfos`:  (list[PrizeInfo])
+    + `prizeinfos` (list[PrizeInfo]) : 多期獎項資訊
 
     Returns
     -------
-    + JSON 格式 carousel (dict[str, Any])
+    + (dict[str, Any]) : JSON 格式 carousel
     """
     contents_carousel = {
         "type": "carousel",
