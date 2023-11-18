@@ -9,16 +9,15 @@ from services.serialize import Accessor, Pickle
 
 
 def invo(prizeinfo: PrizeInfo) -> dict[str, Any]:
-    """
-    中獎號碼 bubble
+    """中獎號碼 bubble
 
     Parameters
     ----------
-    - `prizeinfo`: 獎項資訊 (PrizeInfo)
+    + `prizeinfo` (PrizeInfo): 獎項資訊
 
     Returns
     -------
-    - JSON 格式 bubble (dict[str, Any])
+    + (dict[str, Any]): JSON 格式 bubble
     """
 
     # 讀入 bubble 模板
@@ -36,16 +35,15 @@ def invo(prizeinfo: PrizeInfo) -> dict[str, Any]:
     return contents
 
 def multi_invo(prizeinfos: list[PrizeInfo]) -> dict[str, Any]:
-    """
-    中獎號碼 carousel
+    """中獎號碼 carousel
 
     Parameters
     ----------
-    - `prizeinfos`: 多期獎項資訊 (list[PrizeInfo])
+    + `prizeinfos`:  (list[PrizeInfo])
 
     Returns
     -------
-    - JSON 格式 carousel (dict[str, Any])
+    + JSON 格式 carousel (dict[str, Any])
     """
     contents_carousel = {
         "type": "carousel",
@@ -54,6 +52,7 @@ def multi_invo(prizeinfos: list[PrizeInfo]) -> dict[str, Any]:
     for prizeinfo in prizeinfos:
         contents_carousel["contents"].append(invo(prizeinfo))
     return contents_carousel
-    
+
+
 if __name__ == "__main__":
     pass

@@ -9,17 +9,16 @@ from globals.variables import URL
 
 
 class PrizeInfo():
-    """
-    獎項資訊
+    """獎項資訊
     """
     def __init__(self, title: str, special: str, grand: str, first: list[str]):
         """
         Attributes
         ----------
-        - `title`: 期別
-        - `special`: 特別獎
-        - `grand`: 特獎
-        - `first`: 頭獎
+        + `title` (str): 期別
+        + `special` (str): 特別獎
+        + `grand` (str): 特獎
+        + `first` (list[str]): 頭獎
         """
         self.title = title
         self.special = special
@@ -27,17 +26,16 @@ class PrizeInfo():
         self.first = first
 
     @classmethod
-    def fetch_num(cls, n: int) -> "PrizeInfo":
-        """
-        PrizeInfo 工廠函式，解析 XML 並取得中獎號碼資訊
+    def from_fetch(cls, n: int) -> "PrizeInfo":
+        """PrizeInfo 工廠函式，解析 XML 並取得中獎號碼資訊
 
         Parameters
         ----------
-        - `n`: 前 n 期 (int)
+        + `n` (int): 前 n 期
 
         Returns
         -------
-        - 獎項資訊 (PrizeInfo)
+        + (PrizeInfo): 獎項資訊
         """
         
         response = requests.get(URL)
@@ -47,32 +45,30 @@ class PrizeInfo():
         ptext = items[n].find("./description").text     # 取得 中獎號碼
         templist = ptext.replace("</p>", "").split("：")
 
-        return PrizeInfo(title,                         # 期別
-                         templist[1][:8],               # 特別獎
-                         templist[2][:8],               # 特獎
-                         templist[3].split("、"))       # 頭獎
+        return cls(title,                         # 期別
+                   templist[1][:8],               # 特別獎
+                   templist[2][:8],               # 特獎
+                   templist[3].split("、"))       # 頭獎
 
     def format(self) -> str:
-        """
-        獎項資訊格式化
+        """獎項資訊格式化
 
         Returns
         -------
-        - 獎項資訊格式化字串 (str)
+        - (str): 獎項資訊格式化字串
         """
         return f"""{self.title}\n特別獎：{self.special}\n特獎：{self.grand}\n頭獎：{self.first[0]}、{self.first[1]}、{self.first[2]}"""
 
     def check_invoice(self, last_three_digits: str) -> tuple[bool, str]:
-        """
-        對後三碼進行對獎動作
+        """對後三碼進行對獎動作
 
         Parameters
         ----------
-        - `last_three_digits`: 後三碼 (str)
+        - `last_three_digits` (str): 後三碼 
 
         Returns
         -------
-        - (tuple[bool, str])
+        + (tuple[bool, str]): 
             - 是否中獎 (bool)
             - 回傳訊息 (str)
         """

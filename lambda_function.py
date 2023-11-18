@@ -7,8 +7,8 @@ from flask import Flask, request
 
 # local library
 from services.prizes import PrizeInfo
-from services.flex import *
-from globals.linebot_modules import invo, multi_invo
+from services.flex import invo, multi_invo
+from globals.linebot_modules import *
 from globals.variables import line_bot_api, handler
 
 
@@ -48,15 +48,15 @@ def handle_message(event: MessageEvent) -> None:
         reply_messages.append(TextSendMessage(text="請輸入發票最後三碼進行對獎！"))
     
     elif msg == "@前期中獎號碼":
-        prizeinfos = [PrizeInfo.fetch_num(1), PrizeInfo.fetch_num(2)]
+        prizeinfos = [PrizeInfo.from_fetch(1), PrizeInfo.from_fetch(2)]
         reply_messages.append(FlexSendMessage(alt_text=prizeinfos[0].format(), contents=multi_invo(prizeinfos)))
 
     elif msg == "@本期中獎號碼":
-        prizeinfo = PrizeInfo.fetch_num(0)
+        prizeinfo = PrizeInfo.from_fetch(0)
         reply_messages.append(FlexSendMessage(alt_text=prizeinfo.format(), contents=invo(prizeinfo)))
 
     elif len(msg) == 3 and msg.isdigit():
-        prizeinfo = PrizeInfo.fetch_num(0)
+        prizeinfo = PrizeInfo.from_fetch(0)
         win, reply_text = prizeinfo.check_invoice(msg)
         if win:
             # 若有贏得獎項，同時將中獎號碼 bubble 也一併傳出
